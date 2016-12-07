@@ -5,14 +5,17 @@
 // A. ||||||| ARRAY PLAY! |||||||
 
 // 1. Make a roster variable and set it to an array of the players.
-console.log("1. The Roster\n")
+var roster = ['Judy Kim', 'Sam Fishinbottom','Mike Pittz','Amy Vlor', 'Greg Craig', 'Craig Greg',
+              'Lex Luger','Klempt Klarc', 'Amit Patel', 'Joanne Fabric', 'Margaret Kalanchoe', 'Lucy Bascetta'];
 
-
+console.log("1. The Roster\n");
+console.log(roster);
 
 console.log("\n");
 // 2. Set the batting lineup to the last 9 people on the roster.
+var lineUp = roster.slice(3);
 console.log("2. The Lineup\n")
-
+console.log(lineUp);
 
 
 console.log('\n');
@@ -20,7 +23,8 @@ console.log('\n');
 //    Then, print to the console the batter's name append with " is up
 //    to bat!".
 console.log("3. Batter Up!\n")
-
+var batterUp = lineUp[0];
+console.log(batterUp + ' is up to bat!')
 
 
 // B. ||||||| CONDITIONAL POSITIONAL! |||||||
@@ -32,7 +36,13 @@ console.log('\n');
 //    console, "Lex take us home!", otherwise, print "Get us on base
 //    Lex!"
 console.log('4. Take Us Home, Slugger\n')
-
+var slugger = lineUp[3].substring(0,3);
+var onBase = 2;
+if (onBase >= 2){
+  console.log(slugger + " take us home!")
+} else {
+  console.log("Get us on base " + slugger + "!");
+}
 
 
 console.log('\n');
@@ -42,7 +52,15 @@ console.log('\n');
 //    pitcher, and set it to the warmingUp var OR the first spot in the
 //    roster.
 console.log('5. Pitcher or Closer?\n')
-
+var warmingUp;
+var leadingBy = 3;
+if (leadingBy <2){
+  warmingUp = roster[1];
+  var pitcher = warmingUP;
+} else {
+  var pitcher = lineUp[0];
+}
+console.log(pitcher);
 
 
 console.log('\n');
@@ -50,6 +68,12 @@ console.log('\n');
 //    downBy is greater than 2, tell Sam to go for the knees. Otherwise,
 //    just tell her to strike 'em out.
 console.log('6. Dirty Tricks\n')
+var downBy;
+if (pitcher === 'Sam Fishinbottom' && downBy > 2){
+  console.log('Sam, go for the knees!');
+} else {
+  console.log("Strike 'em out Amy!");
+}
 
 
 
@@ -59,7 +83,11 @@ console.log('\n');
 //    player, print to the console "<player name> is ready to knock it
 //    out of the park!"
 console.log('7. Run Through the Batting Order\n');
-
+var count = 0;
+while (count < lineUp.length){
+  console.log(lineUp[count] + ' is ready to knock it out of the park!');
+  count++;
+}
 
 
 console.log('\n');
@@ -68,7 +96,15 @@ console.log('\n');
 //    when cheering them on. Otherwise, they should cheer: "Let's go
 //    <player name>!". Use a for loop!
 console.log('8. The Greg Craig Predicament\n');
-
+var count = 0;
+while (count < lineUp.length){
+  if(lineUp[count] === 'Greg Craig'|| lineUp[count] === 'Craig Greg'){
+    console.log("Let's go!");
+  } else{
+    console.log("Let's go " + lineUp[count] + "!")
+  }
+  count++;
+}
 
 
 console.log('\n');
@@ -78,5 +114,13 @@ console.log('\n');
 //    roster array and add all players with a last name longer than 7
 //    characters and print it to the console.
 console.log('9. Long Name Freaks Gotta Go\n');
-
-
+var playersCut = [];
+var count = 0;
+var wholeElement = roster[count].indexOf(' ') + 1;
+for (count; count < roster.length; count++) {
+  var lastName = roster[count].substring(wholeElement);
+  if (lastName.length <= 7) {
+    playersCut.push(roster[count]);
+  }
+}
+console.log(playersCut);
