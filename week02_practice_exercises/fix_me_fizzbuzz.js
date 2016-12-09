@@ -33,19 +33,16 @@
 // 'fizzbuzz'
 
 
-var number = function(number){
- for (var i = 0; i <= 200; i++){
- if ((number % 5 === 0) && (number % 3 === 0)){
-   console.log ('fizzbuzz')
- }
- else if (number % 3 === 0){
-   console.log ("fizz")
- }
- else if(number % 5 === 0){
-   console.log ('buzz')
- }
- else {
-        return number.toString();
-    }
-}
+var number = function(){
+ for (var i = 1; i <= 15; i++){
+  if ((i % 5 === 0) && (i % 3 === 0)){
+     console.log ('fizzbuzz');
+    } else if(i % 5 === 0){
+          console.log ('buzz')
+      } else if (i % 3 === 0){
+            console.log ("fizz")
+        } else {
+              console.log(i);
+          }
+  }
 };
